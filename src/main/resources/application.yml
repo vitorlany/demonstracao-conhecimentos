@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: demo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demo
+    username: admin
+    password: D94pf4q0wl5Fk2WcLO
+    hikari:
+      driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc: DEBUG
+
+springdoc:
+  swagger-ui:
+    path: /docs
