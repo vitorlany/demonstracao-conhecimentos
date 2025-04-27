@@ -14,7 +14,7 @@ import java.util.List;
 public class PersonRepository implements IPersonDataProvider {
     private final PersonEntityRepository personEntityRepository;
 
-    public Long registerPerson(Person person) {
+    public Long registerPerson(final Person person) {
         final var entity = new PersonEntity(person.getName(), person.getCpf());
         final var persistedEntity = personEntityRepository.save(entity);
         return persistedEntity.getId();

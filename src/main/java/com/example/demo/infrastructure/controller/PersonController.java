@@ -16,7 +16,7 @@ public class PersonController {
 
     @PostMapping
     public Long registerPerson(@RequestBody RegisterPersonRequestBody registerPersonRequestBody) {
-        return personApplication.registerPersonUseCase(
+        return personApplication.registerPerson(
                 registerPersonRequestBody.name(),
                 registerPersonRequestBody.cpf()
         );
@@ -24,6 +24,6 @@ public class PersonController {
 
     @GetMapping
     public List<Person> getAllPersons() {
-        return personApplication.getAllPersonUseCase();
+        return personApplication.getAllPerson();
     }
 }

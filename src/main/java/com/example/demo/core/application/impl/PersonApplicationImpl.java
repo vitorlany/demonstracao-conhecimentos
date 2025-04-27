@@ -16,12 +16,12 @@ public class PersonApplicationImpl implements IPersonApplication {
     private final IGetAllPersonUseCase getAllPersonUseCase;
 
     @Override
-    public Long registerPersonUseCase(final String name, final String cpf) {
+    public Long registerPerson(final String name, final String cpf) {
         return registerPersonUseCase.execute(name, cpf);
     }
 
     @Override
-    public List<Person> getAllPersonUseCase() {
+    public List<Person> getAllPerson() {
         return getAllPersonUseCase.execute();
     }
 }
