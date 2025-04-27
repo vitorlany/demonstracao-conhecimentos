@@ -1,4 +1,4 @@
-package com.example.demo.infrastructure.controller;
+package com.example.demo.infrastructure.entrypoint.controller;
 
 import com.example.demo.core.application.ITextApplication;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.example.demo.infrastructure.controller.request;
+package com.example.demo.infrastructure.entrypoint.controller.request;
 
 public record RegisterPersonRequestBody(
         String name,
