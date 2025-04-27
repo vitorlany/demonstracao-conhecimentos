@@ -1,6 +1,7 @@
-package com.example.demo.infrastructure.data.dataprovider;
+package com.example.demo.infrastructure.data.dataprovider.impl;
 
 import com.example.demo.core.domain.Person;
+import com.example.demo.infrastructure.data.dataprovider.IPersonDataProvider;
 import com.example.demo.infrastructure.data.entity.PersonEntity;
 import com.example.demo.infrastructure.data.repository.PersonEntityRepository;
 import lombok.RequiredArgsConstructor;
@@ -10,7 +11,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class PersonDataProvider {
+public class PersonRepository implements IPersonDataProvider {
     private final PersonEntityRepository personEntityRepository;
 
     public Long registerPerson(Person person) {
@@ -21,6 +22,7 @@ public class PersonDataProvider {
 
     public List<Person> getAllPersons() {
         return personEntityRepository.findAll()
-                .stream().map(obj -> new Person(obj.getId(), obj.getName(), obj.getCpf())).toList();
+                .stream().map(obj -> new Person(obj.getId(), obj.getName(), obj.getCpf()))
+                .toList();
     }
 }

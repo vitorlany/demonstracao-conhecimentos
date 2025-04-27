@@ -1,7 +1,7 @@
 package com.example.demo.core.usecase.impl;
 
 import com.example.demo.core.usecase.IGenerateRandomTextUseCase;
-import com.example.demo.infrastructure.data.dataprovider.TextEntityDataProvider;
+import com.example.demo.infrastructure.data.dataprovider.ITextEntityDataProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,8 +10,7 @@ import java.time.LocalDateTime;
 @Service
 @RequiredArgsConstructor
 public class GenerateRandomTextUseCaseImpl implements IGenerateRandomTextUseCase {
-
-    private final TextEntityDataProvider textEntityDataProvider;
+    private final ITextEntityDataProvider textEntityDataProvider;
 
     @Override
     public String execute() {

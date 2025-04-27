@@ -1,5 +1,6 @@
-package com.example.demo.infrastructure.data.dataprovider;
+package com.example.demo.infrastructure.data.dataprovider.impl;
 
+import com.example.demo.infrastructure.data.dataprovider.ITextEntityDataProvider;
 import com.example.demo.infrastructure.data.entity.TextEntity;
 import com.example.demo.infrastructure.data.repository.TextEntityRepository;
 import lombok.RequiredArgsConstructor;
@@ -9,8 +10,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class TextEntityDataProvider {
-
+public class TextRepository implements ITextEntityDataProvider {
     private final TextEntityRepository textEntityRepository;
 
     public List<String> getAllTexts() {

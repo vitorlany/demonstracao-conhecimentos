@@ -1,9 +1,8 @@
 package com.example.demo.infrastructure.controller;
 
+import com.example.demo.core.application.IPersonApplication;
 import com.example.demo.core.domain.Person;
-import com.example.demo.core.usecase.IGetAllPersonUseCase;
-import com.example.demo.core.usecase.IRegisterPersonUseCase;
-import com.example.demo.infrastructure.controller.request.RegisterPersonRequest;
+import com.example.demo.infrastructure.controller.request.RegisterPersonRequestBody;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,16 +12,18 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/person")
 public class PersonController {
-    private final IRegisterPersonUseCase registerPersonUseCase;
-    private final IGetAllPersonUseCase getAllPersonUseCase;
+    private final IPersonApplication personApplication;
 
     @PostMapping
-    public Long registerPerson(@RequestBody RegisterPersonRequest registerPersonRequest) {
-        return registerPersonUseCase.execute(registerPersonRequest.name(), registerPersonRequest.cpf());
+    public Long registerPerson(@RequestBody RegisterPersonRequestBody registerPersonRequestBody) {
+        return personApplication.registerPersonUseCase(
+                registerPersonRequestBody.name(),
+                registerPersonRequestBody.cpf()
+        );
     }
 
     @GetMapping
     public List<Person> getAllPersons() {
-        return getAllPersonUseCase.execute();
+        return personApplication.getAllPersonUseCase();
     }
 }

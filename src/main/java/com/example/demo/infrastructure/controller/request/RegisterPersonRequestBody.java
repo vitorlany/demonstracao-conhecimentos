@@ -1,6 +1,6 @@
 package com.example.demo.infrastructure.controller.request;
 
-public record RegisterPersonRequest(
+public record RegisterPersonRequestBody(
         String name,
         String cpf
 ) {
