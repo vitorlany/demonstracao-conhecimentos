@@ -1,7 +1,8 @@
-package com.example.demo.infrastructure.entrypoint.controller;
+package com.example.demo.infrastructure.entrypoint.controller.impl;
 
 import com.example.demo.core.application.IPersonApplication;
 import com.example.demo.core.domain.Person;
+import com.example.demo.infrastructure.entrypoint.controller.IPersonController;
 import com.example.demo.infrastructure.entrypoint.controller.request.RegisterPersonRequestBody;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -10,19 +11,18 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/person")
-public class PersonController {
+public class PersonControllerImpl implements IPersonController {
     private final IPersonApplication personApplication;
 
-    @PostMapping
-    public Long registerPerson(@RequestBody RegisterPersonRequestBody registerPersonRequestBody) {
+    @Override
+    public Long registerPerson(final RegisterPersonRequestBody registerPersonRequestBody) {
         return personApplication.registerPerson(
                 registerPersonRequestBody.name(),
                 registerPersonRequestBody.cpf()
         );
     }
 
-    @GetMapping
+    @Override
     public List<Person> getAllPersons() {
         return personApplication.getAllPerson();
     }
