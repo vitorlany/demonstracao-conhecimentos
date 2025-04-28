@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class Person {
-    private Long id;
-    private String name;
-    private String cpf;
+    private final Long id;
+    private final String name;
+    private final String cpf;
 
     public Person(final Long id, final String name, final String cpf) {
         if (name.length() < 5) {

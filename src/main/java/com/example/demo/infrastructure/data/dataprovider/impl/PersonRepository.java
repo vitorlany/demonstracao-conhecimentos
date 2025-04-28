@@ -15,6 +15,7 @@ public class PersonRepository implements IPersonDataProvider {
     private final PersonEntityRepository personEntityRepository;
 
     public Long registerPerson(final Person person) {
+//      TODO: adicionar mapstruct
         final var entity = new PersonEntity(person.getName(), person.getCpf());
         final var persistedEntity = personEntityRepository.save(entity);
         return persistedEntity.getId();
@@ -22,6 +23,7 @@ public class PersonRepository implements IPersonDataProvider {
 
     public List<Person> getAllPersons() {
         return personEntityRepository.findAll()
+//                TODO: mapstruct para lista
                 .stream().map(obj -> new Person(obj.getId(), obj.getName(), obj.getCpf()))
                 .toList();
     }
