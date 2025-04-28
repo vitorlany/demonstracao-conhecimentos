@@ -1,5 +1,7 @@
 package com.example.demo.core.usecase;
 
+import com.example.demo.core.usecase.dto.RegisterPersonDTO;
+
 public interface IRegisterPersonUseCase {
-    Long execute(String name, String cpf);
+    Long execute(RegisterPersonDTO registerPersonDTO);
 }

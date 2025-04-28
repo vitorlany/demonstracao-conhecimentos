@@ -4,6 +4,7 @@ import com.example.demo.core.application.IPersonApplication;
 import com.example.demo.core.domain.Person;
 import com.example.demo.core.usecase.IGetAllPersonUseCase;
 import com.example.demo.core.usecase.IRegisterPersonUseCase;
+import com.example.demo.core.usecase.dto.RegisterPersonDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +17,8 @@ public class PersonApplicationImpl implements IPersonApplication {
     private final IGetAllPersonUseCase getAllPersonUseCase;
 
     @Override
-    public Long registerPerson(final String name, final String cpf) {
-        return registerPersonUseCase.execute(name, cpf);
+    public Long registerPerson(final RegisterPersonDTO registerPersonDTO) {
+        return registerPersonUseCase.execute(registerPersonDTO);
     }
 
     @Override

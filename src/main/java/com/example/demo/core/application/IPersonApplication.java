@@ -1,10 +1,11 @@
 package com.example.demo.core.application;
 
 import com.example.demo.core.domain.Person;
+import com.example.demo.core.usecase.dto.RegisterPersonDTO;
 
 import java.util.List;
 
 public interface IPersonApplication {
-    Long registerPerson(String name, String cpf);
+    Long registerPerson(RegisterPersonDTO registerPersonDTO);
     List<Person> getAllPerson();
 }

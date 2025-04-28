@@ -2,12 +2,11 @@ package com.example.demo.infrastructure.entrypoint.controller.impl;
 
 import com.example.demo.core.application.IPersonApplication;
 import com.example.demo.core.domain.Person;
+import com.example.demo.core.usecase.dto.RegisterPersonDTO;
 import com.example.demo.infrastructure.entrypoint.controller.IPersonController;
 import com.example.demo.infrastructure.entrypoint.controller.request.RegisterPersonRequestBody;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,10 +17,8 @@ public class PersonControllerImpl implements IPersonController {
 
     @Override
     public Long registerPerson(final RegisterPersonRequestBody registerPersonRequestBody) {
-        return personApplication.registerPerson(
-                registerPersonRequestBody.name(),
-                registerPersonRequestBody.cpf()
-        );
+        final var registerPersonDTO = new RegisterPersonDTO(registerPersonRequestBody.name(), registerPersonRequestBody.cpf());
+        return personApplication.registerPerson(registerPersonDTO);
     }
 
     @Override
