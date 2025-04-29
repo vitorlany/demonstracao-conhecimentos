@@ -27,3 +27,4 @@ Esse projeto visa demonstrar meus conhecimentos sobre Java e Arquitetura de Soft
 - [ ] Implementar New Relic / Open Search (observabilidade)
 - [ ] Implementar *data providers* de outras api's
 - [ ] Demonstração de padrões de projetos como Strategy e Factory para outras possibilidades de fluxos da aplicação
+- [ ] Criar pipeline (CI/CD) para publicar a documentação do Swagger no Github Pages
