@@ -1,6 +1,5 @@
 package com.example.demo.core.usecase.impl;
 
-import com.example.demo.core.domain.Person;
 import com.example.demo.core.usecase.IRegisterPersonUseCase;
 import com.example.demo.core.usecase.dto.RegisterPersonDTO;
 import com.example.demo.infrastructure.data.dataprovider.IPersonDataProvider;
